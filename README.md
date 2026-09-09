@@ -61,3 +61,13 @@
 ## 안내문 작성 기준
 
 [토스의 8가지 라이팅 원칙들](https://toss.tech/article/8-writing-principles-of-toss)을 참고했어요. 다음에 할 일과 보일 결과를 먼저 적고, 중복 설명과 어려운 표현을 줄였어요. 오류의 의미와 다시 시작할 방법을 함께 안내해요.
+
+## 기존 Colab 사본을 갱신하려면
+
+위 다섯 노트북의 원본이 수정돼도 개인 Drive 사본은 자동 업데이트되지 않아요. 기존 답과 코드를 저장한 뒤 최신 링크에서 새 사본을 만들고, 답과 수정한 조건만 옮겨 첫 코드 칸부터 실행하세요. 기존 사본을 삭제할 필요는 없어요.
+
+MCP의 `UnsupportedOperation: fileno`는 예상한 거부가 아니라 Colab 출력 스트림 호환성 오류예요. 수정본은 두 MCP 호출 모두 서버 stderr를 실제 임시 파일로 받고 진단 내용을 화면에 표시해요. 셋째 칸만 바꾸지 말고 둘째 칸의 공통 실행 함수도 함께 갱신해야 해요. `-32602`와 채널40 거부 확인 메시지는 의도한 입력 검사 결과예요.
+
+검증: 파일 번호가 없는 출력 스트림으로 기존 `fileno` 오류를 재현한 뒤, 수정본의 도구 목록 조회와 채널40 호출이 모두 성공하는 것을 확인했어요. 다섯 노트북은 로컬 새 커널에서 다시 실행했어요. 실제 Colab 브라우저 실행이나 개인 Drive 사본 변경을 완료했다는 뜻은 아니에요.
+
+[강사용 완성본도 최신 Colab에서 열기](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/solutions/day3_gatekeeper_solution.ipynb).
