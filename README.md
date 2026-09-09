@@ -8,7 +8,7 @@
 
 | 지금 할 일 | 누를 링크 | 어디부터 어디까지 하나요? | 여기까지 확인하면 돼요 |
 | --- | --- | --- | --- |
-| **1교시 · 세 구조 비교** | [1교시 Colab 열기 — day3_structures](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day3_structures.ipynb) | 지난 시간 질문을 정리한 뒤 열어요. 첫 준비 칸 → 버전 A → B·C → 비교 칸 → 마지막 설명 칸에 답을 적어요. | 같은 주문의 최종 금액은 세 버전 모두7200원이에요. 할인율을 바꿀 위치도 비교해요. |
+| **1교시 · 세 구조 비교** | [1교시 Colab 열기 — day3_structures](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day3_structures.ipynb) | 지난 시간 질문을 정리한 뒤 열어요. 첫 준비 칸 → A·B·C의 차이 읽기·실행 → 정상 금액 비교 → 수량0 전용 칸 → 원인·공통 함수 확인 → 답을 적어요. | 2잔은 모두7200원,0잔은 A만 거부해요. 검사 누락과 기능 재사용·변경 위치를 연결해 설명해요. |
 | **2교시 ① · MCP 확인** | [2교시 첫 Colab 열기 — day3_mcp](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day3_mcp.ipynb) | 첫 칸 설치 → 둘째 칸 목록 → 셋째 칸 채널40 거부 → 마지막 설명 칸에 답을 적어요. | 도구24개와 채널40 거부 확인 메시지가 나와요. 이때의 `-32602`는 예상한 결과예요. |
 | **2교시 ② · 주문 기록 읽기** | [2교시 다음 Colab 열기 — day3_gatekeeper](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day3_gatekeeper.ipynb) | 첫 준비 칸 → **1단계·2단계까지만** 실행해요. 조건 수정은 3교시에 이어 해요. | 기록12건과 A07의 `KeyError`를 확인해요. 이 사본을 열어 두세요. |
 | **3교시 · 주문 검사 완성** | **2교시에 만든 day3_gatekeeper 사본을 계속 써요.** 닫았다면 [Colab 열기](https://colab.research.google.com/)에서 내 사본을 찾아요. | **3단계** 조건 두 곳 수정·함수 재실행 → **4단계** 분류 비교 → **5단계** 수량 검사 → **6단계** 저장·다운로드 순서예요. | 통과10·거부2·놓침0, 합계112250원과 수량4검사를 확인해요. 파일의 `complete`가 true여야 완성이에요. |
