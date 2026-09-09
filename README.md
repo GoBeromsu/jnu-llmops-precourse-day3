@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | Day 3 · 1교시 | [day3_structures.ipynb](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day3_structures.ipynb) | 네 겹 · 두 겹 · 한 덩어리, 세 구조로 같은 주문을 계산합니다 | 세 버전 모두 7200원 |
 | Day 3 · 2교시 MCP | [day3_mcp.ipynb](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day3_mcp.ipynb) | 실제 MCP 서버에서 도구 목록을 받고 채널 40의 거부 이유를 확인해요 | 도구 24개 · 입력 오류 -32602 |
-| Day 3 · 2·3교시 주문 | [day3_gatekeeper.ipynb](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day3_gatekeeper.ipynb) | 2교시에 기록을 읽고, 3교시에 검사 조건 두 곳을 채워요 | 통과 10 · 거부 2 · 놓침 0 · 수량 검사 2건 거부 |
+| Day 3 · 2·3교시 주문 | [day3_gatekeeper.ipynb](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day3_gatekeeper.ipynb) | 2교시에 기록을 읽고, 3교시에 검사 조건 두 곳을 채워요 | 통과 10 · 거부 2 · 놓침 0 · 수량 검사 4건 거부 |
 | Day 4 | [day4_mock.ipynb](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day4_mock.ipynb) | 대역 `suggest_order`의 제안 5건을 같은 문지기와 기대표로 검사합니다 | 통과 3 · 거부 2 |
 
 ## 여는 법
@@ -19,11 +19,24 @@
 
 실행 1과 실행 2는 `day3_structures` 하나에서 이어져요. MCP를 확인할 때는 `day3_mcp`, 주문 기록을 읽을 때는 `day3_gatekeeper`를 열어요.
 
+## 주문 실습은 여섯 단계로 해요
+
+준비 칸을 실행한 뒤 제목의 단계 번호를 따라가세요.
+
+1. 주문 기록12건을 읽어요.
+2. 검사 없이 처리해 A07의 KeyError를 확인해요.
+3. 허용 메뉴와 수량 조건 두 곳을 채우고 함수 칸을 다시 실행해요.
+4. 통과·거부·놓침과 합계·거부 이유를 비교해요.
+5. 수량0·11·문자열"두"·True가 모두 거부되는지 확인해요.
+6. 현재 함수로 다시 점검해 파일을 저장하고, 완성·미완성 표시를 확인해요.
+
+메뉴 조건만 맞아도 놓침0이 될 수 있어요. 수량 검사까지 확인하세요. 함수가 오류로 멈춘 것은 올바른 거부 응답이 아니에요. 저장 도우미는 그 오류도 기록해 미완성으로 남겨요. 상태를 기록하는 일과 수업의 출석·퇴실 기준은 별개예요.
+
 ## MCP 실습에서 확인할 것
 
 - 서버는 `x-m32-mcp-server@3.3.0`, Python 클라이언트는 `mcp==1.26.0`, Node.js 실행 환경은 `nodejs-wheel==22.14.0`을 사용해요.
 - 첫 코드 칸은 위 버전의 패키지를 Colab에 설치해요. nodejs-wheel은 Node.js를 Python 패키지로 배포하는 외부 프로젝트예요. 인터넷이 필요해요.
-- 두 번째 코드 칸은 서버 프로그램을 인터넷에서 내려받아 실행해요. 처음에는 시간이 걸릴 수 있어요. ▶ 자리에 표시가 돌고 있으면 기다려요.
+- 첫 코드 칸에서 npm으로 서버 파일까지 내려받아요. 다음 칸들은 그 파일을 Node.js로 직접 실행해요. 다운로드 중에는 기다리고, 준비 메시지가 나온 뒤 다음 칸으로 가요.
 - `tools/list`로 도구 24개를 받고 `channel_set_volume`의 입력 규격을 읽어요.
 - 채널 `40`을 보내면 허용 범위 1~32를 벗어나 거부돼요. **채널 번호는 바꾸지 않아요.**
 - `connection_connect`나 정상 볼륨 변경은 호출하지 않아요. 실제 장비와 AI 모델을 사용하지 않아요.
@@ -43,7 +56,7 @@
 - `day4_mock`: 통과 3 · 거부 2 · 기대표 검사 통과
 - `day3_mcp`: 실제 서버에서 도구 24개 조회, 채널 40에 `-32602` 입력 거부 확인.
 
-위 결과는 로컬 Python 3.11과 nbclient로 확인했어요. 실제 Colab 브라우저에서의 실행은 별도 확인이 필요해요. 주문 검사 함수는 오늘 데이터에 필요한 검사만 하며 모든 형태의 주문을 검사하지는 않아요. `orders_result.json`에는 놓침 목록이 저장되지 않으므로 놓침이 남은 파일을 완성 결과로 제출하지 않아요.
+위 결과는 로컬 Python 3.11과 nbclient로 확인했어요. 실제 Colab 브라우저에서의 실행은 별도 확인이 필요해요. 주문 검사 함수는 오늘 데이터에 필요한 검사만 하며 모든 형태의 주문을 검사하지는 않아요. `orders_result.json`에는 놓침을 포함한 모든 처리 기록과 `checks`, `complete`가 저장돼요. 검사 9개가 모두 맞아야 `complete`가 true예요. 미완성 파일은 false로 구분돼요.
 
 ## 안내문 작성 기준
 
