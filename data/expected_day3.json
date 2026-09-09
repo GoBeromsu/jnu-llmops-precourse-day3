@@ -1,0 +1,10 @@
+{
+  "records": 12,
+  "accepted": 10,
+  "rejected": 2,
+  "accepted_total": 112250,
+  "rejected_reasons": {
+    "A07": "없는 메뉴: 녹차라떼",
+    "A11": "필수 Key 없음: is_student"
+  }
+}
