@@ -2,12 +2,22 @@
 
 지난 시간 질문을 먼저 정리하고, 1교시 실습 안내에서 Colab을 열어요. GitHub에는 원본이 있고, 코드는 Colab에서 실행해요. 첫 코드 칸이 필요한 파일을 받아 와요. AI API 키나 믹서는 필요하지 않아요.
 
-| 순서 | 노트북 | 하는 일 | 기대 결과 |
+## Day 3 · 오늘은 이 순서로 따라오세요
+
+**한꺼번에 모두 열지 마세요. 강사가 실습을 안내하면 해당 교시의 링크만 누르세요.** 처음 여는 노트북은 `파일 → Drive에 사본 저장`으로 내 사본을 만듭니다.
+
+| 지금 할 일 | 누를 링크 | 어디부터 어디까지 하나요? | 여기까지 확인하면 돼요 |
 | --- | --- | --- | --- |
-| Day 3 · 1교시 | [day3_structures.ipynb](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day3_structures.ipynb) | 네 겹 · 두 겹 · 한 덩어리, 세 구조로 같은 주문을 계산합니다 | 세 버전 모두 7200원 |
-| Day 3 · 2교시 MCP | [day3_mcp.ipynb](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day3_mcp.ipynb) | 실제 MCP 서버에서 도구 목록을 받고 채널 40의 거부 이유를 확인해요 | 도구 24개 · 입력 오류 -32602 |
-| Day 3 · 2·3교시 주문 | [day3_gatekeeper.ipynb](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day3_gatekeeper.ipynb) | 2교시에 기록을 읽고, 3교시에 검사 조건 두 곳을 채워요 | 통과 10 · 거부 2 · 놓침 0 · 수량 검사 4건 거부 |
-| Day 4 | [day4_mock.ipynb](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day4_mock.ipynb) | 대역 `suggest_order`의 제안 5건을 같은 문지기와 기대표로 검사합니다 | 통과 3 · 거부 2 |
+| **1교시 · 세 구조 비교** | [1교시 Colab 열기 — day3_structures](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day3_structures.ipynb) | 지난 시간 질문을 정리한 뒤 열어요. 첫 준비 칸 → 버전 A → B·C → 비교 칸 → 마지막 설명 칸에 답을 적어요. | 같은 주문의 최종 금액은 세 버전 모두7200원이에요. 할인율을 바꿀 위치도 비교해요. |
+| **2교시 ① · MCP 확인** | [2교시 첫 Colab 열기 — day3_mcp](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day3_mcp.ipynb) | 첫 칸 설치 → 둘째 칸 목록 → 셋째 칸 채널40 거부 → 마지막 설명 칸에 답을 적어요. | 도구24개와 채널40 거부 확인 메시지가 나와요. 이때의 `-32602`는 예상한 결과예요. |
+| **2교시 ② · 주문 기록 읽기** | [2교시 다음 Colab 열기 — day3_gatekeeper](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day3_gatekeeper.ipynb) | 첫 준비 칸 → **1단계·2단계까지만** 실행해요. 조건 수정은 3교시에 이어 해요. | 기록12건과 A07의 `KeyError`를 확인해요. 이 사본을 열어 두세요. |
+| **3교시 · 주문 검사 완성** | **2교시에 만든 day3_gatekeeper 사본을 계속 써요.** 닫았다면 [Colab 열기](https://colab.research.google.com/)에서 내 사본을 찾아요. | **3단계** 조건 두 곳 수정·함수 재실행 → **4단계** 분류 비교 → **5단계** 수량 검사 → **6단계** 저장·다운로드 순서예요. | 통과10·거부2·놓침0, 합계112250원과 수량4검사를 확인해요. 파일의 `complete`가 true여야 완성이에요. |
+
+**3교시에 원본으로 새 사본을 만들 필요는 없어요.** 실행 상태가 초기화됐다면 기존 사본의 첫 준비 칸부터 다시 실행하세요. `런타임 → 모두 실행`을 먼저 누르기보다 수업 중에는 위 범위에 맞춰 진행하세요.
+
+## Day 4 · 다음 날 실습
+
+[Day 4 Colab 열기 — day4_mock](https://colab.research.google.com/github/GoBeromsu/jnu-llmops-precourse-day3/blob/main/notebooks/day4_mock.ipynb): 대역이 만든 제안5건을 검사해 통과3·거부2와 기대표 검사 결과를 확인해요. Day 3 수업 중에는 이 노트북을 열지 않아도 돼요.
 
 ## 여는 법
 
